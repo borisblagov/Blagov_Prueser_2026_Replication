@@ -19,8 +19,8 @@ Folder structure and notable files:
     ├── Tables_Section_5.m  File to write all of the matlab output from Sectino 5 estimations in Excel
 ├── Main.m                   Main file for use in your own research           
 ├── Main_Section_3.m         Main file for replicating the impulse response functions (IRFs) in Section 3
-├── Main_Section_4.m         Main file for replicating the Monte Carlo study in  in Section 4
-├── Main_Section_4.m         Main file for replicating the forecasting part in Section 5
+├── Main_Section_4.m         Main file for replicating the Monte Carlo study in Section 4
+├── Main_Section_5.m         Main file for replicating the forecasting part in Section 5
 ├── PanelVAR_output.xlsx     Setup file for the forecasting analysis (Section 5) 
 ├── PanelVAR_MC.xlsx         Setup for the Monte Carlo (Section 4)
 ├── README.md                This file
@@ -34,8 +34,8 @@ Folder structure and notable files:
 ## Replication of Section 4
 
 1. Run ```Main_Section_4.m```. This will take a long time, in our case it was a bit more than a week. Note that it will create a file called ```MC_dataset_rev.mat``` in the main folder that will be 451 MB.
-2. Once the code runs it will generate 12 .mat files in the folder ```MonteCarlo_rev\```, each approximately 51 MB.
-3. Navigate to ```\MonteCarlo_rev\``` and run the file ```Tables_Section_4.m```. This will show the tables in matlab and create a file called ```MC_results.xlsx```.
+2. Once the code runs it will generate additional twelve ```.mat``` files in the folder ```MonteCarlo_rev\```, each approximately 51 MB.
+3. Navigate to ```MonteCarlo_rev\``` and run the file ```Tables_Section_4.m```. This will show the tables in matlab and create a file called ```MC_results.xlsx```.
 
 
 ## Replication of Section 5
