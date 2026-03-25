@@ -1,0 +1,9 @@
+function temp_tab = summaryMC_tab(strct_in,strct_field,desc_strct)
+    % var_nms = strcat(strct_field,{'_T50','_T120','_T500'});
+    var_nms = strcat(strct_field,{'_T80','_T200'});
+   temp_tab = [...
+        struct2table(desc_strct),...    
+        array2table(strct_in.(strct_field),'VariableNames',var_nms)...
+        ];
+
+end
