@@ -29,27 +29,27 @@ Folder structure and notable files:
 
 ## Replication of Section 3
 
-1. Run ```Main_Section_3.m```. You can uncomment the different lines to get the desired aspects from the Section. The IRFs will generate 2 ```.mat``` files about 45MB each
+1. Run ```Main_Section_3.m```. You can uncomment the different lines to get the desired aspects from the Section. The IRFs will generate two ```.mat``` files about 45MB each.
 
 ## Replication of Section 4
 
 1. Run ```Main_Section_4.m```. This will take a long time, in our case it was a bit more than a week. Note that it will create a file called ```MC_dataset_rev.mat``` in the main folder that will be 451 MB.
-2. Once the code runs it will generate 12 .mat files in the folder ```MonteCarlo_rev\```, each approximately 51 MB
-3. Navigate to ```\MonteCarlo_rev\``` and run the file ```Tables_Section_4.m```. This will show the tables in matlab and create a file called ```MC_results.xlsx```
+2. Once the code runs it will generate 12 .mat files in the folder ```MonteCarlo_rev\```, each approximately 51 MB.
+3. Navigate to ```\MonteCarlo_rev\``` and run the file ```Tables_Section_4.m```. This will show the tables in matlab and create a file called ```MC_results.xlsx```.
 
 
 ## Replication of Section 5
 
 1. Run Main_Section_5.m. This is the main file and will do estimations of 9 from the total of 10 models.
-Note that this took about four to six weeks on our machine. It is possible to split the estimation model by model, but the file is currently programmed to do the estimations sequentially without any input from the user
-The code does the forecasts for all models except the model by Jarocinski (2010). This was done in the BEAR toolbox. If you want to replicate the full tables from Section 5 do the following
-2. Navigate to the folder ```\BEAR\``` and open the file bear_4_2.m in matlab
-3. Copy the *absolute* path to that file, e.g. ```C:\Paper Panel VAR replication\BEAR``` (or wherever this folder is) to the clipboard
+Note that this took about four to six weeks on our machine. It is possible to split the estimation model by model, but the file is currently programmed to do the estimations sequentially without any input from the user.
+The code does the forecasts for all models except the model by Jarocinski (2010). This was done in the BEAR toolbox. If you want to replicate the full tables from Section 5 do the following.
+2. Navigate to the folder ```\BEAR\``` and open the file bear_4_2.m in matlab.
+3. Copy the *absolute* path to that file, e.g. ```C:\Paper Panel VAR replication\BEAR``` (or wherever this folder is) to the clipboard.
 4. Paste the absolute path to the file on line 36 in between the apostrophies, e.g. the line should read
-```pref.datapath = 'C:\Paper Panel VAR replication\BEAR';```
-5. Run the file bear_4_2.m. It will open a window. On that window at the bottom you again need ot paste the path
-6. Leave all other properties as they are and press Next\Ok until the estimatino finishes. It would take a while, on our machines it was several hours
-7. Navigate to ```\Results\``` and run the file ```Tables_Section_5.m```
+```pref.datapath = 'C:\Paper Panel VAR replication\BEAR';```.
+5. Run the file bear_4_2.m. It will open a window. On that window at the bottom you again need ot paste the path.
+6. Leave all other properties as they are and press Next\Ok until the estimatino finishes. It would take a while, on our machines it was several hours.
+7. Navigate to ```\Results\``` and run the file ```Tables_Section_5.m```.
 8. Open The file Resuts.xlsx and go to the tab in the excel ribbon called "Data" and click on "Refresh all". This would update the pivot tables from the paper.
 
 
@@ -72,12 +72,16 @@ We have the follwoing panel VAR benchmarks
 - 9. KK_BMS:    Bayesian mixture shrinkage BMS, as in Korobilis (2016), only works with 1 lag
 - 10. KK_CC:    factor  shrinkage prior (Canova and Ciccarelli, 2009)
 - 18. J:        hierarchical panel VAR as in Jarocinski (2010). NOTE THAT THIS DOES IS NOT CODED IN Main.m, we have used the BEAR Toolbox for the results from this model.
-
 Columns D to H are relevant for the user, you can specify the number of lags (P), the forecast horizon (hor), the number of draws (MCMC) and the number of for burn-in (BURNIN). Note that the panel VAR benchmarks do not work with lags lengths longer than 1, that is inherent limitation of these models.
+
+![alt text](images/ModelSettings_Excel_part1.png)
 
 Columns H to W are to be left as they are. These columns tell the code how to specify the variance covariance matrix of the prior to achieve the desired models. We discuss the theory in eq. (9) and (10) in the paper. For example in eq. (9), setting the right part to 0 leaves only Minnesota prior (e.g. by setting $\lambda$ and $\tau$ to very large numbers), while setting the left part of the equation to 0 leaves only pooling.
 
 If you want to change something (e.g. use different lags or more MCMC draws, etc), you can copy  the desired row as a new specification (spec). For example, suppose that you want to use our model (```spec01) with 2 lags and 2000 draws, you can copy the first row to line row 11 and then modify columns A to G, by calling it spec20; no: 20, renaming it to myModel, and adjusting the rest.
+
+
+![alt text](images/ModelSettings_Excel_part2.png)
 
 Once you have adjusted the file ```PanelVAR_output.xlsx``` as you want, change line 19 to estimate the desired models. E.g. if you want to estimate our main specification along with the above example with fewer lags (spec20), then change line 19 to
 ```matlab
@@ -147,8 +151,13 @@ If you do use this code please cite the paper Prüser, J. and Blagov, B. (2026).
 
 # References
 Prüser, J. and Blagov, B. (2026). Improving inference and forecasting in VAR models using cross-sectional information, Economic Modelling.
+
 Chan, J. (2021). Minnesota-type adaptive hierarchical priors for large Bayesian VARs. International Journal of Forecasting, 37(3):1212–1226
+
 Canova, F. and Ciccarelli, M. (2013). Panel Vector Autoregressive models: A survey. ECB Discussion paper.
+
 Jarocinski, M. (2010). Responses to monetary policy shocks in the east and the west of Europe: a comparison. Journal of Applied Econometrics, 25(5):833–868.
+
 Koop, G. and Korobilis, D. (2015). Model uncertainty in panel vector autoregressions. European Economic Review, 81:115–131
+
 Korobilis, D. (2016). Prior selection for panel vector autoregressions. Computational Statistics and Data Analysis, 101:110–120.
