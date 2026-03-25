@@ -1,5 +1,5 @@
 # Replication material for "Improving inference and forecasting in VAR models using cross-sectional information"
-by Boris Blagov and Jan Prüser
+by [Boris Blagov](https://borisblagov.com) and [Jan Prüser](https://sites.google.com/view/janprueser/welcome)
 
 This code comes without support of any kind. The code has been tested on the following Matlab versions: Matlab 2019a, Matlab2020a on Windows 11 machines. Only calculating the inefficiency factors requires the Econometrics Toolbox, all other functions should work without any additional tooling. The results for Sections 4 and 5 are saved in an Excel file, so an installation of MS Excel would be required for that.
 
