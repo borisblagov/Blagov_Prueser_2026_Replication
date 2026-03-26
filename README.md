@@ -3,6 +3,8 @@ by [Boris Blagov](https://borisblagov.com) and [Jan Prüser](https://sites.googl
 
 This code comes without support of any kind. The code has been tested on the following Matlab versions: Matlab 2019a, Matlab2020a on Windows 11 machines. Only calculating the inefficiency factors requires the Econometrics Toolbox, all other functions should work without any additional tooling. The results for Sections 4 and 5 are saved in an Excel file, so an installation of MS Excel would be required for that.
 
+The data is publicly available and is included with the replication files. For the main forecasting analysis we used the [GVAR dataset from Kamiar Mohaddes](https://www.mohaddes.org/gvar), specifically the 2023 vintage. The Euro Area dataset has been collected from [Eurostat](https://ec.europa.eu/eurostat/data/database) through the software Macrobond.
+
 You would need about 1 GB of hard drive space and the program must be able to write data to disk.
 
 Folder structure and notable files:
@@ -13,6 +15,7 @@ Folder structure and notable files:
 ├── functions\
 ├── images\
 ├── figures\
+    ├── Create_Figure_Lambdas.m File to create Figure 2 in Section 3
 ├── MonteCarlo_rev\
     ├── Tables_Section_4.m  File to create the output for the Monte Carlo analysis in Excel and Matlab
 ├── Results\
@@ -30,6 +33,9 @@ Folder structure and notable files:
 ## Replication of Section 3
 
 1. Run ```Main_Section_3.m```. You can uncomment the different lines to get the desired aspects from the Section. The IRFs will generate two ```.mat``` files about 45MB each.
+
+The file wil create Figure 1 in the paper
+To recreate Figure 2 in the paper run ```Create_Figure_Lambdas.m``` in ```figures\```
 
 ## Replication of Section 4
 
